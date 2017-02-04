@@ -1,0 +1,27 @@
+%% -----------------------------------
+%% ---> A MODIFIER PAR L'ETUDIANT <---
+%% -----------------------------------
+%%
+%% Commandes qui affichent le titre du document, le nom de l'auteur, etc.
+\newcommand\monTitre{Titre de mon document}
+\newcommand\monPrenom{Jules}
+\newcommand\monNom{C\ae{}sar}
+\newcommand\monDepartement{génie informatique et génie logiciel}
+\newcommand\maDiscipline{génie informatique}
+\newcommand\monDiplome{D}        % (M)aîtrise ou (D)octorat
+\newcommand\anneeDepot{2010}
+\newcommand\moisDepot{avril}
+\newcommand\monSexe{M}           % "M" ou "F"
+\newcommand\PageGarde{N}         % "O" ou "N"
+\newcommand\AnnexesPresentes{O}  % "O" ou "N". Indique si le document comprend des annexes.
+\newcommand\mesMotsClef{Liste,de,mot-clés,séparés,par,des,virgules}
+%%
+%%  DEFINITION DU JURY
+%%
+%%  Pour la définition du jury, les macros suivantes sont definies:
+%%  \PresidentJury, \DirecteurRecherche, \CoDirecteurRecherche, \MembreJury, \MembreExterneJury
+%%
+%%  Toutes les macros prennent 4 paramètres: Sexe (M/F), Prénom, Nom, Titres
+\newcommand\monJury{\PresidentJury{M}{Prénom}{NOM}{Doct.}\\
+\DirecteurRecherche{F}{Prénom}{Nom}{Ph.~D.}\\
+\MembreJury{M}{Prénom}{Nom}{Ph.~D.}}

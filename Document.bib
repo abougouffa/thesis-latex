@@ -1,0 +1,239 @@
+@inproceedings{ART_ARTP,
+  author =	 "{L. J.} Zhang and S. Pierre and L. Marchand",
+  title =	 "{Optimization of Handover Performance for FMIPv6}",
+  booktitle =	 "Intelligence in Communication Systems",
+  pages =	 {169--178},
+  year =	 2005
+}
+
+@article{ART_HMRSVP,
+  author =	 "C. Tseng and G. Lee and R. Liu and T. Wang",
+  title =	 "{HMRSVP: a Hierarchical Mobile RSVP Protocol}",
+  journal =	 "{Wireless Networks}",
+  volume =	 {9},
+  number =	 {2},
+  month =	 mar,
+  pages =	 {95--102},
+  year =	 2003
+}
+
+
+@article{Bao2013,
+  author =	 {Bao, Tao and Zhang, Xiangyu},
+  title =	 {On-the-fly Detection of Instability Problems in Floating-point Program Execution},
+  journal =	 {SIGPLAN Not.},
+  issue_date =	 {October 2013},
+  volume =	 {48},
+  number =	 {10},
+  month =	 oct,
+  year =	 {2013},
+  issn =	 {0362-1340},
+  pages =	 {817--832},
+  numpages =	 {16},
+  url =		 {http://doi.acm.org/10.1145/2544173.2509526},
+  doi =		 {10.1145/2544173.2509526},
+  acmid =	 {2509526},
+  publisher =	 {ACM},
+  address =	 {New York, NY, USA},
+  keywords =	 {continuity, discrete factors, floating point errors, floating point representation, instability, sampling},
+}
+
+@INPROCEEDINGS{Benz2012,
+  author =	 {Benz, Florian and Hildebrandt, Andreas and Hack, Sebastian},
+  title =	 {A dynamic program analysis to find floating-point accuracy problems},
+  booktitle =	 {ACM SIGPLAN Notices},
+  year =	 {2012},
+  volume =	 {47},
+  month =	 jun,
+  issn =	 {0362-1340},
+  pages =	 {453 - 462},
+  abstract =	 {Programs using floating-point arithmetic are prone to accuracy problems caused by rounding and catastrophic cancellation. These phenomena provoke bugs that are notoriously hard to track down: the program does not necessarily crash and the results are not necessarily obviously wrong, but often subtly inaccurate. Further use of these values can lead to catastrophic errors. In this paper, we present a dynamic program analysis that supports the programmer in finding accuracy problems. Our analysis uses binary translation to perform every floating-point computation side by side in higher precision. Furthermore, we use a lightweight slicing approach to track the evolution of errors.  We evaluate our analysis by demonstrating that it catches wellknown floating-point accuracy problems and by analyzing the Spec CFP2006 floating-point benchmark. In the latter, we show how our tool tracks down a catastrophic cancellation that causes a complete loss of accuracy leading to a meaningless program result. Finally, we apply our program to a complex, real-world bioinformatics application in which our program detected a serious cancellation. Correcting the instability led not only to improved quality of the result, but also to an improvement of the program's run time.},
+}
+
+@INCOLLECTION{DSilva2012,
+  author =	 {D'Silva, Vijay and Haller, Leopold and Kroening, Daniel and Tautschnig, Michael},
+  title =	 {Numeric Bounds Analysis with Conflict-Driven Learning},
+  booktitle =	 {Tools and Algorithms for the Construction and Analysis of Systems},
+  publisher =	 {Springer Berlin Heidelberg},
+  year =	 {2012},
+  editor =	 {Flanagan, Cormac and König, Barbara},
+  volume =	 {7214},
+  series =	 {Lecture Notes in Computer Science},
+  pages =	 {48-63},
+  abstract =	 {This paper presents a sound and complete analysis for determining the range of floating-point variables in control software. Existing approaches to bounds analysis either use convex abstract domains and are efficient but imprecise, or use floating-point decision procedures, and are precise but do not scale. We present a new analysis that elevates the architecture of a modern SAT solver to operate over floating-point intervals. In experiments, our analyser is consistently more precise than a state-of-the-art static analyser and significantly outperforms floating-point decision procedures.},
+  doi =		 {10.1007/978-3-642-28756-5\_5},
+  isbn =	 {978-3-642-28755-8},
+}
+
+@INPROCEEDINGS{Dabrowski2011,
+  author =	 {Dabrowski, Adam and Pawowski, Pawe and Stankiewicz, Mateusz and Misiorek, Filip},
+  title =	 {Quasi-maximum accuracy floating-point computations with {GPGPU} for applications in digital signal processing},
+  booktitle =	 {SPA 2011 - Signal Processing: Algorithms, Architectures, Arrangements, and Applications - Conference Proceedings},
+  year =	 {2011},
+  pages =	 {144 - 148},
+  address =	 {Poznan, Poland},
+  abstract =	 {An idea of the use of two accumulators for improvement of the precision of floating-point computations with graphic processing units (GPUs) is presented in this paper for applications in digital signal processing.  The increase of the precision of computations does not need any increase of the length of the data words. This is particularly important if hardware limits for the precision of computations exist, which is just the case for graphic processors. A history of development of the cores of graphic cards is analyzed together with the idea of general purpose computing using GPU's (GPGPU). Special attention has been paid to efficiency and precision of computations. The so-called maximum accuracy property has been analyzed and technically realized with no additional costs in hardware and computation time. The proposed approach has been tested with illustrative frequency modulated sine waveform generators.},
+}
+
+@ARTICLE{DeDinechin2011,
+  author =	 {De Dinechin, Florent and Lauter, Christoph and Melquiond, Guillaume},
+  title =	 {Certifying the floating-point implementation of an elementary function using {G}appa},
+  journal =	 {IEEE Transactions on Computers},
+  year =	 {2011},
+  volume =	 {60},
+  pages =	 {242 - 253},
+  number =	 {2},
+  abstract =	 {High confidence in floating-point programs requires proving numerical properties of final and intermediate values. One may need to guarantee that a value stays within some range, or that the error relative to some ideal value is well bounded. This certification may require a time-consuming proof for each line of code, and it is usually broken by the smallest change to the code, e.g., for maintenance or optimization purpose. Certifying floating-point programs by hand is, therefore, very tedious and error-prone. The Gappa proof assistant is designed to make this task both easier and more secure, due to the following novel features: It automates the evaluation and propagation of rounding errors using interval arithmetic. Its input format is very close to the actual code to validate. It can be used incrementally to prove complex mathematical properties pertaining to the code. It generates a formal proof of the results, which can be checked independently by a lower level proof assistant like Coq. Yet it does not require any specific knowledge about automatic theorem proving, and thus, is accessible to a wide community. This paper demonstrates the practical use of this tool for a widely used class of floating-point programs: implementations of elementary functions in a mathematical library.},
+  doi =		 {10.1109/TC.2010.128},
+}
+
+@article{DeFigueiredo2004,
+  year =	 {2004},
+  issn =	 {1017-1398},
+  journal =	 {Numerical {A}lgorithms},
+  volume =	 {37},
+  number =	 {1-4},
+  doi =		 {10.1023/B:NUMA.0000049462.70970.b6},
+  title =	 {Affine Arithmetic: Concepts and Applications},
+  publisher =	 {Kluwer Academic Publishers},
+  keywords =	 {interval arithmetic; range analysis; dependency problem},
+  author =	 {de Figueiredo, LuizHenrique and Stolfi, Jorge},
+  pages =	 {147-158},
+  language =	 {English}
+}
+
+@incollection{Filliatre2007,
+  year =	 {2007},
+  isbn =	 {978-3-540-73367-6},
+  booktitle =	 {Computer Aided Verification},
+  volume =	 {4590},
+  series =	 {Lecture Notes in Computer Science},
+  editor =	 {Damm, Werner and Hermanns, Holger},
+  doi =		 {10.1007/978-3-540-73368-3\_21},
+  title =	 {The {W}hy/{K}rakatoa/{C}aduceus Platform for Deductive Program Verification},
+  publisher =	 {Springer Berlin Heidelberg},
+  author =	 {Filliâtre, Jean-Christophe and Marché, Claude},
+  pages =	 {173-177},
+  language =	 {English}
+}
+
+@ARTICLE{Fousse2007,
+  author =	 {Laurent Fousse and Guillaume Hanrot and Vincent Lefèvre and Patrick Pélissier and Paul Zimmermann},
+  title =	 {{MPFR}: {A} multiple-precision binary floating-point library with correct rounding},
+  journal =	 {ACM Transactions on Mathematical Software},
+  year =	 {2007},
+  volume =	 {33},
+  pages =	 {1-14},
+  number =	 {2},
+  month =	 jun,
+  abstract =	 {This article presents a multiple-precision binary floating-point library, written in the ISO C language, and based on the GNU MP library. Its particularity is to extend to arbitrary-precision, ideas from the IEEE 754 standard, by providing correct rounding and exceptions.  We demonstrate how these strong semantics are achieved - -with no significant slowdown with respect to other arbitrary-precision tools - -and discuss a few applications where such a library can be useful.},
+  doi =		 {10.1145/1236463.1236468},
+}
+@ARTICLE{Goldberg1991,
+  author =	 {David Goldberg},
+  title =	 {What Every Computer Scientist Should Know About Floating-Point Arithmetic},
+  journal =	 {Computing Surveys},
+  year =	 {1991},
+  volume =	 {23},
+  pages =	 {5-48},
+  number =	 {1},
+  month =	 mar,
+  abstract =	 {Floating-point arithmetic is considered an esoteric subject by many people. This is rather surprising because floating-point is ubiquitous in computer systems. Almost every language has a floating-point datatype; computers from PCs to supercomputers have floating-point accelerators; most compilers will be called upon to compile floating-point algorithms from time to time; and virtually every operating system must respond to floating-point exceptions such as overflow. This paper presents a tutorial on those aspects of floating-point that have a direct impact on designers of computer systems. It begins with background on floating-point representation and rounding error, continues with a discussion of the IEEE floating-point standard, and concludes with numerous examples of how computer builders can better support floating-point.},
+  url =		 {http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html}
+}
+
+@INPROCEEDINGS{Goubault2001,
+  author =	 {Goubault, Eric},
+  title =	 {Static analysis of the precision of floating-point operations},
+  booktitle =	 {Static Analysis. 8th International Symposium, SAS 2001. Proceedings},
+  year =	 {2001},
+  pages =	 {234 - 59},
+  address =	 {Berlin, Germany},
+  abstract =	 {Computers manipulate approximations of real numbers, called floating-point numbers. The calculations they make are accurate enough for most applications. Unfortunately, in some (catastrophic) situations, the floating-point operations lose so much precision that they quickly become irrelevant. In this article, we review some of the problems one can encounter, focussing on the IEEE754-1985 norm. We give a (sketch of a) semantics of its basic operations then abstract them (in the sense of abstract interpretation) to extract information about the possible loss of precision. The expected application is abstract debugging of software ranging from simple on-board systems (which use more and,more on-the-shelf micro-processors with floating-point units) to scientific codes. The abstract analysis is demonstrated on simple examples and compared with related work},
+}
+@INPROCEEDINGS{Goubault2008,
+  author =	 {Goubault, Eric and Putot, Sylvie and Baufreton, Philippe and Gassino, Jean},
+  title =	 {Static analysis of the accuracy in control systems: {P}rinciples and experiments},
+  booktitle =	 {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+  year =	 {2008},
+  volume =	 {4916 LNCS},
+  pages =	 {3 - 20},
+  address =	 {Berlin, Germany},
+  abstract =	 {Finite precision computations can severely affect the accuracy of computed solutions. We present a complete survey of a static analysis based on abstract interpretation, and a prototype implementing this analysis for C code, for studying the propagation of rounding errors occurring at every intermediary step in floating-point computations.  In the first part of this paper, we briefly present the domains and techniques used in the implemented analyzer, called FLUCTUAT. We describe in the second part, the experiments made on real industrial codes, at Institut de Radioprotection et de Su&circ;rete&acute; Nucle&acute;aire and at Hispano-Suiza, respectively coming from the nuclear industry and from aeronautics industry. This paper aims at filling in the gaps between some theoretical aspects of the static analysis of floating-point computations that have been described in [13,14,21], and the necessary choices of algorithms and implementation, in accordance with practical motivations drawn from real industrial cases.},
+  doi =		 {10.1007/978-3-540-79707-4\_3},
+}
+
+@MANUAL{Harder,
+  title =	 {Numerical Analysis for Engineering},
+  author =	 {Douglas Wilhelm Harder and Richard Khoury},
+  organization = {University of Waterloo},
+  year =	 {2005},
+  address =	 {200 University Avenue West, Waterloo, Ontario, Canada N2L 3G1},
+  url =		 {https://ece.uwaterloo.ca/~dwharder/NumericalAnalysis/}
+}
+
+@BOOK{Higham2002,
+  title =	 {Accuracy and Stability of Numerical Algorithms},
+  publisher =	 {SIAM},
+  year =	 {2002},
+  author =	 {Nicholas J. Higham},
+}
+
+@phdthesis{PHD_HPMRSVP,
+  author =	 "C. Abondo",
+  title =	 "{Gestion de la Qualité de Service dans les systèmes mobiles de prochaine génération}",
+  school =	 "{École Polytechnique de Montréal}",
+  year =	 2005,
+  month =	 jun
+}
+
+@manual{RFC_IPv4,
+  author =	 "J. Postel",
+  title =	 "{RFC791}: {Internet Protocol}",
+  month =	 sep,
+  year =	 1981,
+  organization = "{IETF}"
+}
+
+@book{Tanenbaum,
+  author =	 "A. Tanenbaum",
+  title =	 "Computer Networks (fourth edition)",
+  publisher =	 "Prentice-Hall International, Inc.",
+  year =	 2002,
+  isbn =	 "0-13-066102-3."
+}
+
+@MISC{Whitehead2011,
+  author =	 {Nathan Whitehead and Alex Fit-Florea},
+  title =	 {Precision \& Performance: Floating Point and {IEEE} 754 Compliance for {NVIDIA} {GPUs}},
+  year =	 {2011},
+  abstract =	 {A number of issues related to floating point accuracy and compliance are a frequent source of confusion on both CPUs and GPUs. The purpose of this white paper is to discuss the most common issues related to NVIDIA GPUs and to supplement the documentation in the CUDA C Programming Guide.},
+  url =		 {https://developer.nvidia.com/sites/default/files/akamai/cuda/files/NVIDIA-CUDA-Floating-Point.pdf}
+}
+
+@manual{mpmath,
+  key =		 {mpmath},
+  author =	 {Fredrik Johansson and others},
+  title =	 {mpmath: a {P}ython library for arbitrary-precision floating-point arithmetic (version 0.18)},
+  month =	 dec,
+  year =	 {2013},
+  url =		 {http://mpmath.org/},
+}
+@article{nichols2010,
+  author =	 {Eric Nichols and L. J. McDaid and N. H. Siddique},
+  title =	 {CASE STUDY ON A SELF-ORGANIZING SPIKING NEURAL NETWORK FOR ROBOT NAVIGATION},
+  journal =	 {International Journal of Neural Systems},
+  volume =	 {20},
+  number =	 {6},
+  pages =	 {501-508},
+  year =	 {2010},
+}
+
+@manual{nvidia2012,
+  title =	 {{CUDA} {C} {P}rogramming {G}uide},
+  author =	 {{NVIDIA}},
+  organization = {{NVIDIA}},
+  edition =	 {5},
+  year =	 {2012},
+  url =		 {http://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html}
+}
