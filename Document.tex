@@ -27,6 +27,8 @@
 %%
 %% Utilisation de natbib pour les citations et la bibliographie.
 \usepackage{natbib}
+\bibliographystyle{dinat}
+\citestyle{plainnat}
 %%
 %% Autres packages.
 \usepackage{amsmath,color,soulutf8,longtable,colortbl,setspace,ifthen,xspace,url,pdflscape}
@@ -44,6 +46,12 @@
 \makeatletter
 \let\ps@plain=\ps@pagenumber
 \makeatother
+
+\usepackage{stringstrings}
+\newcommand\estVoyelle[1]{
+    \pdfmatch icase{^[aeiuo].*}{#1}
+}
+
 %%
 %% Module qui permet la création des bookmarks dans un fichier PDF.
 %\usepackage[dvipdfm]{hyperref}
@@ -59,8 +67,8 @@
 %% Définitions spécifiques à l'étudiant.
 \include{0-Definitions_Etudiant}
 \ifthenelse{\equal{\monDiplome}{M}}{
-\newcommand\monSujet{Mémoire de maîtrise}
-\newcommand\monDipl{Maîtrise ès sciences appliquées}
+\newcommand\monSujet{Mémoire de master}
+\newcommand\monDipl{Master}
 }{
 \newcommand\monSujet{Thèse de doctorat}
 \newcommand\monDipl{Philosophi\ae{} Doctor}
@@ -89,13 +97,17 @@
 \thispagestyle{empty}%
 \begin{center}%
 \vspace*{\stretch{1}}
-UNIVERSITÉ DE MONTRÉAL\\
+\MakeUppercase\monPays\\
 \vspace*{\stretch{1}}
-\MakeUppercase{\monTitre}\\
+\MakeUppercase\monUniversite (\monUnivAbbr)\\
 \vspace*{\stretch{1}}
-\MakeUppercase{\monPrenom~\monNom}\\
-DÉPARTEMENT DE \MakeUppercase{\monDepartement}\\
-ÉCOLE POLYTECHNIQUE DE MONTRÉAL\\
+\begin{center}
+\huge{\textsf{\monTitre}}\\
+\end{center}
+\vspace*{\stretch{1}}
+\MakeUppercase{\monPrenom~\monNom} \ifdefined\monBinomeNom{\&~\MakeUppercase{\monBinomePrenom~\monBinomeNom}}\fi \\
+DÉPARTEMENT D\ifthenelse{\estVoyelle{\monDepartement}=0}{E~}{'}\MakeUppercase{\monDepartement}\\
+\MakeUppercase\monFaculte~(\monFacAbbr)\\
 \vspace*{\stretch{1}}
 \ifthenelse{\equal{\monDiplome}{M}}{MÉMOIRE PRÉSENTÉ}{THÈSE PRÉSENTÉE} EN VUE DE L'OBTENTION\\
 DU DIPLÔME DE \MakeUppercase{\monDipl}\\
@@ -103,16 +115,22 @@ DU DIPLÔME DE \MakeUppercase{\monDipl}\\
 \MakeUppercase{\moisDepot} \anneeDepot
 \end{center}%
 \vspace*{\stretch{1}}
-\copyright~\monPrenom~\monNom, \anneeDepot.
+\copyright~\monPrenom~\monNom~\ifdefined\monBinomeNom{\&~\monBinomePrenom~\monBinomeNom}\fi, \anneeDepot.
 %%
 %% Identification des membres du jury.
 %%
 \newpage\thispagestyle{empty}%
 \begin{center}%
 \vspace*{\stretch{2}}
-\ul{UNIVERSITÉ DE MONTRÉAL}\\
-\vspace*{\stretch{1}}
-\ul{ÉCOLE POLYTECHNIQUE DE MONTRÉAL}\\
+\MakeUppercase\monPays\\
+\vspace*{\stretch{0.2}}
+\rule{15cm}{0.03cm}\\
+\vspace*{\stretch{0.2}}
+\MakeUppercase\monUniversite~(\monUnivAbbr)\\
+\vspace*{\stretch{0.2}}
+\MakeUppercase\monFaculte~(\monFacAbbr)\\
+\vspace*{\stretch{0.2}}
+\rule{15cm}{0.03cm}\\
 \vspace*{\stretch{2}}
 Ce\ifthenelse{\equal{\monDiplome}{M}}{~mémoire intitulé}{tte thèse intitulée}:\\
 \vspace*{\stretch{1}}
@@ -121,11 +139,16 @@ Ce\ifthenelse{\equal{\monDiplome}{M}}{~mémoire intitulé}{tte thèse intitulée
 \end{center}%
 \begin{flushleft}
 présenté\ifthenelse{\equal{\monDiplome}{M}}{}{e}
-par:~\ul{\mbox{\MakeUppercase{\monNom} \monPrenom}}\\
+par:~\ul{\mbox{\MakeUppercase{\monNom} \monPrenom}}
+\ifdefined\monEmail{\footnote{\texttt{\href{mailto:\monEmail}{\monEmail}}}}\fi
+\ifdefined\monBinomeNom
+{~\& \ul{\mbox{\MakeUppercase{\monBinomePrenom~\monBinomeNom}}}}\fi
+\ifdefined\monBinomeEmail{\footnote{\texttt{\href{mailto:\monBinomeEmail}{\monBinomeEmail}}}}\fi\\
 en vue de l'obtention du diplôme de:~\ul{\mbox{\monDipl}}\\
 a été dûment accepté\ifthenelse{\equal{\monDiplome}{M}}{}{e} par le jury d'examen constitué de:\end{flushleft}
-\vspace*{\stretch{2}}
+\vspace*{\stretch{0.5}}
 \monJury
+\vspace*{\stretch{2}}
 %%
 \pagestyle{pagenumber}%
 \include{1-Dedicace}          % Dédicace du document.
@@ -162,8 +185,8 @@ a été dûment accepté\ifthenelse{\equal{\monDiplome}{M}}{}{e} par le jury d'e
 %\backmatter
 \renewcommand\bibname{RÉFÉRENCES}
 \bibliography{Document}
-%\bibliographystyle{polymtl}  % Format de la bibliographie.
-\bibliographystyle{IEEEtranSN-francais}  % Format de la bibliographie.
+%\bibliographystyle{dinat}  % Format de la bibliographie.
+%\bibliographystyle{IEEEtranSN-francais}  % Format de la bibliographie.
 %
 \ifthenelse{\equal{\AnnexesPresentes}{O}}{
 \appendix%
